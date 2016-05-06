@@ -37,16 +37,16 @@ head{
 	<body>
 <div class = "title" >
 <h2 class = "head" style = "background-color: goldenrod" align="center" > List of Parts </h2></div>
-</div>
 <div class = "inner" style ="background-color:goldenrod">
 <FORM method="post" action="${pageContext.servletContext.contextPath}/allparts">
 <div id="cpu">
 <button type="button" onclick="hideCpu()">Hide CPUs</button>
+<div style="overflow:scroll; width: 100%; height: 500px;">
 <table>
 <caption> CPUs </caption>
 <tr><td>Name</td><td>Price($)</td><td>Brand</td><td>Series</td><td>Socket Type</td><td> Frequency</td><td>Cores</td></tr>
 <c:forEach items="${cpus}" var="cpu">
-    <tr style = "overflow:scroll">
+    <tr >
        <td><a href="${cpu.url}" target="_blank">${cpu.name}</a></td>
 	   <td>${cpu.price}</td>
 	   <td>${cpu.brand}</td>
@@ -58,8 +58,10 @@ head{
 </c:forEach>
 </table>
 </div>
+</div>
 <div  id = "mb">
 <button type="button" onclick="hideMb()">Hide Motherboards</button>
+<div style="overflow:scroll; width: 100%; height: 500px;">
 <table>
 <caption> Motherboards </caption>
 <tr><td>Name</td><td>Price($)</td><td>Brand</td><td>Socket Type</td></tr>
@@ -73,8 +75,10 @@ head{
 </c:forEach>
 </table>
 </div>
+</div>
 <div id="gpu">
 <button type="button" onclick="hideGpu()">Hide GPUs</button>
+<div style="overflow:scroll; width: 100%; height: 500px;">
 <table>
 <caption> GPUs </caption>
 <tr><td>Name</td><td>Price($)</td><td>Brand</td><td>Series</td><td>Slot Type</td><td>Memory Size(GB)</td></tr>
@@ -90,8 +94,10 @@ head{
 </c:forEach>
 </table>
 </div>
+</div>
 <div id = "ram">
 <button type="button" onclick="hideRam()">Hide Rams</button>
+<div style="overflow:scroll; width: 100%; height: 500px;">
 <table>
 <caption> RAMs </caption>
 <tr><td>Name</td><td>Price($)</td><td>Brand</td><td>Type</td><td>Capacity(GB)</td><td>Multi-Channel Type</td></tr>
@@ -107,8 +113,10 @@ head{
 </c:forEach>
 </table>
 </div>
+</div>
 <div id = "ssd">
 <button type="button" onclick="hideStorage()">Hide Storage</button>
+<div style="overflow:scroll; width: 100%; height: 500px;">
 <table>
 <caption> Storages </caption>
 <tr><td>Name</td><td>Price($)</td><td>Brand</td><td>Capacity(GB)</td><td>Speed</td></tr>
@@ -123,14 +131,16 @@ head{
 </c:forEach>
 </table>
 </div>
+</div>
 
 <div>
 
 <button type = "submit" name="UpdatePrices" value = "UpdatePrices"> Update all prices</button>
 
 </div>
-</div>
 </FORM>
+</div>
+
 
 <script>
 function hideCpu() {
